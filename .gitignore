@@ -1,4 +1,7 @@
 *.tmp
 .pytest_cache
-__pycache__.DS_store
+__pycache__
 .DS_Store
+.coverage
+.coveragerc
+htmlcov/
