@@ -1,5 +1,4 @@
 # ohtuvarasto
 ohjemistotuotanto2024
 
-![CI Workflow Badge](https://github.com/imsyc75/ohtuvarasto/workflows/CI/badge.svg)
- 
+[![CI Workflow Badge](https://github.com/imsyc75/ohtuvarasto/workflows/CI/badge.svg)](https://github.com/imsyc75/ohtuvarasto/actions)
