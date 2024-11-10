@@ -55,5 +55,4 @@ class Varasto:
     def __str__(self):
         """Return a string representation of the Varasto's current balance 
         and remaining capacity."""
-        return f"saldo = {self.saldo}," \
-               f"vielä tilaa {self.paljonko_mahtuu()}"
+        return f"saldo = {self.saldo}, vielä tilaa {self.paljonko_mahtuu()}"
