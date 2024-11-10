@@ -1,7 +1,13 @@
+"""
+This module demonstrates the usage of the Varasto class.
+"""
+
+
 from varasto import Varasto
 
 
 def main():
+    """Main function to test the Varasto class functionality."""
     mehua = Varasto(100.0)
     olutta = Varasto(100.0, 20.2)
 

@@ -1,26 +1,37 @@
+"""
+This module defines the Varasto class, 
+which simulates a storage unit with methods to add and
+remove items and track the available space.
+"""
+
 class Varasto:
-    def __init__(self, tilavuus, alku_saldo = 0):
+    """Class representing a storage unit with methods 
+    to add and remove items."""
+    def __init__(self, tilavuus, alku_saldo=0):
+        """Initialize the Varasto with a given capacity 
+        and an initial balance."""
         if tilavuus > 0.0:
             self.tilavuus = tilavuus
         else:
-            # virheellinen, nollataan
+            # Invalid capacity, set to 0.0
             self.tilavuus = 0.0
 
         if alku_saldo < 0.0:
-            # virheellinen, nollataan
+            # Invalid initial balance, set to 0.0
             self.saldo = 0.0
         elif alku_saldo <= tilavuus:
-            # mahtuu
+            # Initial balance fits within capacity
             self.saldo = alku_saldo
         else:
-            # täyteen ja ylimäärä hukkaan!
+            # Fill to capacity and discard the rest
             self.saldo = tilavuus
 
-    # huom: ominaisuus voidaan myös laskea. Ei tarvita erillistä kenttää viela_tilaa tms.
     def paljonko_mahtuu(self):
+        """Calculate and return the remaining capacity of the Varasto."""
         return self.tilavuus - self.saldo
 
     def lisaa_varastoon(self, maara):
+        """Add a given amount to the Varasto if it is valid."""
         if maara < 0:
             return
         if maara <= self.paljonko_mahtuu():
@@ -29,17 +40,20 @@ class Varasto:
             self.saldo = self.tilavuus
 
     def ota_varastosta(self, maara):
+        """Remove a given amount from the Varasto 
+        and return the amount removed."""
         if maara < 0:
             return 0.0
         if maara > self.saldo:
             kaikki_mita_voidaan = self.saldo
             self.saldo = 0.0
-
             return kaikki_mita_voidaan
 
         self.saldo = self.saldo - maara
-
         return maara
 
     def __str__(self):
-        return f"saldo = {self.saldo}, vielä tilaa {self.paljonko_mahtuu()}"
+        """Return a string representation of the Varasto's current balance 
+        and remaining capacity."""
+        return f"saldo = {self.saldo}," \
+               f"vielä tilaa {self.paljonko_mahtuu()}"
